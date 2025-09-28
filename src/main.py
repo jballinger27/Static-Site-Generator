@@ -17,7 +17,7 @@ def main():
         shutil.rmtree("public")
     os.makedirs("public")
 
-    generate_pages_recursive(base_path, "templates", "public")
+    generate_pages_recursive(base_path, "contents", "templates", "docs")
     #copy static to public
     copy_tree("static", "public")
 
