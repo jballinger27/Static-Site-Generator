@@ -10,6 +10,8 @@ def generate_page(from_path, template_path, to_path):
     with open(template_path, 'r') as f:
         template = f.read()
     html = template.replace("{{ Title }}", title).replace("{{ Content }}", content_node.to_html())
+
+    final = html.replace('href="/', 'href="{basepath}').replace('src="/', 'src="{basepath}')
     with open(to_path, 'w') as f:
         f.write(html)
 
