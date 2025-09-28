@@ -13,7 +13,7 @@ def generate_page(basepath, from_path, template_path, to_path):
 
     final = html.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
     with open(to_path, 'w') as f:
-        f.write(html)
+        f.write(final)
 
 def generate_pages_recursive(basepath, content_dir, template, output_dir):
     import os
