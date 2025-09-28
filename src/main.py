@@ -13,13 +13,13 @@ import sys
 def main():
     #delete everything in public
     base_path = sys.argv[1] if len(sys.argv) > 1 else "/"
-    if os.path.exists("public"):
-        shutil.rmtree("public")
-    os.makedirs("public")
+    if os.path.exists("docs"):
+        shutil.rmtree("docs")
+    os.makedirs("docs")
 
     generate_pages_recursive(base_path, "content", "template.html", "docs")
     #copy static to public
-    copy_tree("static", "public")
+    copy_tree("static", "docs")
 
 if __name__ == "__main__":
     main()
